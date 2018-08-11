@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Screen size 1350px or less  */
+@mixin screen1350 {
+    @media (max-width: 1350px) {}
+}
+
+/* Screen size 1200px or less  */
+@mixin screen1200 {
+    @media (max-width: 1200px) {}
+}
+
+/* Screen size 1024px or less  */
+@mixin screen1024 {
+    @media (max-width: 1024px) {}
+}
+
+/* Screen size 768px or less  */
+@mixin screen768 {
+    @media (max-width: 768px) {}
+}
+
+/* Screen size 480px or less  */
+@mixin screen480 {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+/* Screen size 414px or less  */
+@mixin screen414 {
+    @media (max-width: 414px) {
+        @content;
+    }
+}
+
+/* Screen size 375px or less  */
+@mixin screen375 {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+/* Screen size 320px or less  */
+@mixin screen320 {
+    @media (max-width: 320px) {
+        @content;
+    }
+}

@@ -1,0 +1,9 @@
+@import "../styles.scss";
+
+.welcome-container {
+    color: black;
+
+    @include screen480 {
+        color: red;
+    }
+}
