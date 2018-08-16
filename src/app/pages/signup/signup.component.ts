@@ -29,9 +29,8 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  // convenience getter for easy access to form fields
-  get signupFormControls() {
-    return this.signupForm.controls;
+  onSignup() {
+    console.log("onSignup signupForm value->",this.signupForm.value)
   }
 
 }

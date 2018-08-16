@@ -3,7 +3,7 @@
     <h1>Sign Up</h1>
   </header>
   <div class="signupFrom-container">
-    <form [formGroup]="signupForm" novalidate>
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()" novalidate>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -78,19 +78,13 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="street">Street</label>
-              <input type="password" formControlName="street" class="form-control" autocomplete="off" />
-              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-              </div>
+              <input type="text" formControlName="street" class="form-control" autocomplete="off" />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="city">City</label>
-              <input type="password" formControlName="city" class="form-control" autocomplete="off" />
-              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-              </div>
+              <input type="text" formControlName="city" class="form-control" autocomplete="off" />
             </div>
           </div>
         </div>
@@ -98,24 +92,30 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="state">State</label>
-              <input type="password" formControlName="state" class="form-control" autocomplete="off" />
-              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-              </div>
+              <input type="text" formControlName="state" class="form-control" autocomplete="off" />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="zip">Zip</label>
               <input type="number" formControlName="zip" class="form-control" autocomplete="off" />
-              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" formControlName="state" class="form-control" autocomplete="off" />
             </div>
           </div>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-success" [disabled]="signupForm.invalid">Sign Up</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>
