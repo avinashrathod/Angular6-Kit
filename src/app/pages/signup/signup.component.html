@@ -1,0 +1,29 @@
+<div class="container-fluid" id="signup-component">
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <div class="signupFrom-container">
+    <form [formGroup]="signupForm" novalidate>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" formControlName="firstName" #firstName class="form-control" autocomplete="off">
+            <div class="invalid-feedback">
+              <div *ngIf="signupForm.controls.firstName.hasError('required')">First Name is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input type="text" formControlName="lastName" class="form-control" autocomplete="off">
+            <div class="invalid-feedback">
+              <div *ngIf="signupForm.controls.lastName.hasError('required')">Last Name is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

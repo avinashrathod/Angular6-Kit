@@ -30,7 +30,23 @@
 
 /* Screen size 768px or less  */
 @mixin screen768 {
-    @media (max-width: 768px) {}
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+/* Screen size 667px or less  */
+@mixin screen667 {
+    @media (max-width: 667px) {
+        @content;
+    }
+}
+
+/* Screen size 568px or less  */
+@mixin screen568 {
+    @media (max-width: 568px) {
+        @content;
+    }
 }
 
 /* Screen size 480px or less  */
