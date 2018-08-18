@@ -1,35 +1,68 @@
+/* This import is necessory to use media variable using scss*/
+@import "../../../styles.scss";
+
 #login-container {
-    height: 662px;
-    width: 100%;
-    background-color: #6ABE4E;
+    min-height: 100vh;
+    background-color: #009d8d;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 
     .login-form-container {
+        background-color: #FFFFFF;
         height: 300px;
         width: 400px;
-        background-color: #FFFFFF;
-        border-radius: 25px;
+        border-radius: 10px;
+        padding: 15px;
 
+        /* Vertically & horizontally center*/
         position: absolute; /*it can be fixed too*/
-        left:0; right:0;
-        top:0; bottom:0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         margin: auto;
-    
+
+        @include screen414 {
+            width: 350px;
+        }
+
+        @include screen375 {
+            width: 312px;
+        }
+
+        @include screen320 {
+            width: 300px;
+        }
+
+        header {
+            h3 {
+                line-height: 50px;
+                text-align: center;
+                color: #4CAF50;
+            }
+        }
+
         .login-form {
-            padding: 30px;
-            padding: 45px;
             text-align: center;
-            z-index: 1;
+            padding: 5px 15px;
 
             input {
-                font-family: "Roboto", sans-serif;
-                outline: 0;
                 background: #f2f2f2;
-                width: 100%;
-                border: 0;
-                margin: 0 0 15px;
                 padding: 15px;
                 box-sizing: border-box;
                 font-size: 14px;
+            }
+
+            .form-group {
+                margin-bottom: 1.8rem;
+
+                .form-control:focus {
+                    box-shadow: none;
+                }
+
+                .form-control.is-invalid:focus {
+                    box-shadow: none;
+                }
             }
 
             button {
@@ -37,9 +70,9 @@
                 text-transform: uppercase;
                 outline: 0;
                 background: #4CAF50;
-                width: 100%;
+                width: 64%;
                 border: 0;
-                padding: 15px;
+                padding: 12px;
                 color: #FFFFFF;
                 font-size: 14px;
                 -webkit-transition: all 0.3 ease;
@@ -47,7 +80,9 @@
                 cursor: pointer;
             }
 
-            button:hover, button:active, button:focus {
+            button:hover,
+            button:active,
+            button:focus {
                 background: #43A047;
             }
 
@@ -61,11 +96,11 @@
                 color: #4CAF50;
                 text-decoration: none;
             }
-        }
-    }
 
-    .validation-message {
-        text-align: left;
-        color: red;
+            .error-message {
+                text-align: left;
+                position: absolute;
+            }
+        }
     }
 }
