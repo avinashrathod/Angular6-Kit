@@ -12,7 +12,7 @@
               <input type="text" formControlName="firstName" #firstName class="form-control" [ngClass]="{ 'is-invalid': (signupForm.controls.firstName.dirty && signupForm.controls.firstName.invalid) }">
               <div class="text-danger" *ngIf="signupForm.controls.firstName.dirty && signupForm.controls.firstName.invalid">
                 <p *ngIf="signupForm.controls.firstName.hasError('required')">First Name is required</p>
-                <p *ngIf="signupForm.controls.firstName.hasError('maxlength')">Max 20 characters is required</p>
+                <p *ngIf="signupForm.controls.firstName.hasError('maxlength')">Max 20 characters is allowed</p>
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
               <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': (signupForm.controls.lastName.dirty && signupForm.controls.lastName.invalid) }">
               <div class="text-danger" *ngIf="signupForm.controls.lastName.dirty && signupForm.controls.lastName.invalid">
                 <p *ngIf="signupForm.controls.lastName.hasError('required')">Last Name is required</p>
-                <p *ngIf="signupForm.controls.lastName.hasError('maxlength')">Max 20 characters is required</p>
+                <p *ngIf="signupForm.controls.lastName.hasError('maxlength')">Max 20 characters is allowed</p>
               </div>
             </div>
           </div>
@@ -35,8 +35,8 @@
               <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': (signupForm.controls.email.dirty && signupForm.controls.email.invalid) }"
               />
               <div class="text-danger" *ngIf="signupForm.controls.email.dirty && signupForm.controls.email.invalid">
-                <p *ngIf="signupForm.controls.email.hasError('required')">First Name is required</p>
-                <p *ngIf="signupForm.controls.email.hasError('pattern')">invalid eamil</p>
+                <p *ngIf="signupForm.controls.email.hasError('required')">Email is required</p>
+                <p *ngIf="signupForm.controls.email.hasError('pattern')">invalid email</p>
               </div>
             </div>
           </div>
