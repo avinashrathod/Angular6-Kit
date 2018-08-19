@@ -1,7 +1,7 @@
 <div class="container-fluid" id="signup-component">
   <div class="signup-container">
     <header>
-      <h2>Sign Up Form</h2>
+      <h3>Sign Up Form</h3>
     </header>
     <div class="signupFrom-container">
       <form [formGroup]="signupForm" (ngSubmit)="onSignup()" autocomplete="off" novalidate>
@@ -108,6 +108,11 @@
           </div>
         </div>
       </form>
+      <div class="row note-message">
+          <div class="col-md-12 text-center">
+              <b>Note:</b> This login page is designed and validated using "Angular Reactive / Model Driven Forms".
+          </div>
+        </div>
     </div>
   </div>
 </div>

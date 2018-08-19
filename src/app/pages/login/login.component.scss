@@ -55,11 +55,9 @@
 
             .form-group {
                 margin-bottom: 1.8rem;
-
                 .form-control:focus {
                     box-shadow: none;
                 }
-
                 .form-control.is-invalid:focus {
                     box-shadow: none;
                 }
@@ -101,6 +99,12 @@
                 text-align: left;
                 position: absolute;
             }
+        }
+
+        .note-message {
+            color: #fff;
+            border: 1px solid white;
+            margin-top: 20px;
         }
     }
 }

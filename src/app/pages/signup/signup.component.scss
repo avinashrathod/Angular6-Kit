@@ -19,7 +19,7 @@
             color: #000;
             border-radius: 10px;
             width: 800px;
-            margin: 20px auto 0 auto;
+            margin: 5px auto 0 auto;
 
             @include screen900 {
                 width: 730px;
@@ -67,12 +67,16 @@
 
             button {
                 width: 50%;
-                margin-top: 20px;
                 background-color: #0073b1;
             }
 
             .error-message {
                 position: absolute;
+            }
+
+            .note-message {
+                border: 2px solid #00839D;
+                margin-top: 15px;
             }
         }
     }

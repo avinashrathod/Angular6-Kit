@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" ngModel #password="ngModel"
-        [ngClass]="{ 'is-invalid': (password.dirty && password.invalid) }" required>
+          [ngClass]="{ 'is-invalid': (password.dirty && password.invalid) }" required>
 
         <div class="text-danger error-message" *ngIf="password.dirty && password.invalid">
           <p *ngIf="password.errors?.required">Password is required</p>
@@ -26,5 +26,10 @@
         <a [routerLink]="['/signup']">Create an account</a>
       </p>
     </form>
+    <div class="row note-message">
+      <div class="col-md-12 text-center">
+        <b>Note:</b> This login page is designed and validated using "Angular Template Driven Forms".
+      </div>
+    </div>
   </div>
 </div>
