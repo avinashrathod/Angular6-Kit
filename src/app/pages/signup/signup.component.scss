@@ -1,3 +1,6 @@
+/* This import is necessory to use media variable using scss*/
+@import "../../../styles.scss";
+
 #signup-component {
     background-color: #00839D;
     min-height: 100vh;
@@ -12,10 +15,47 @@
 
         .signupFrom-container {
             background-color: #EDF0F3;
-            padding: 30px;
+            padding: 25px;
             color: #000;
-            margin-top: 30px;
             border-radius: 10px;
+            width: 800px;
+            margin: 20px auto 0 auto;
+
+            @include screen900 {
+                width: 730px;
+            }
+
+            @include screen768 {
+                width: 620px;
+            }
+
+            @include screen667 {
+                width: 520px;
+            }
+
+            @include screen568 {
+                width: 430px;
+            }
+
+            @include screen480 {
+                width: 370px;
+            }
+
+            @include screen414 {
+                width: 330px;
+            }
+
+            @include screen375 {
+                width: 270px;
+            }
+
+            @include screen320 {
+                width: 250px;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
 
             .form-control.is-invalid:focus {
                 box-shadow: none;
@@ -29,6 +69,10 @@
                 width: 50%;
                 margin-top: 20px;
                 background-color: #0073b1;
+            }
+
+            .error-message {
+                position: absolute;
             }
         }
     }

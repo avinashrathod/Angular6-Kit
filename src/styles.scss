@@ -28,6 +28,13 @@
     }
 }
 
+/* Screen size 900px or less  */
+@mixin screen900 {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
 /* Screen size 768px or less  */
 @mixin screen768 {
     @media (max-width: 768px) {
