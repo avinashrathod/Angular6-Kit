@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, retry, catchError, tap } from 'rxjs/operators';
+
+
+import { LoginService } from '../../services/login-service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,31 +14,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private loginService: LoginService) {
 
-   }
+  }
 
   ngOnInit() {
   }
 
   login(loginForm: NgForm) {
-    console.log("loginForm value==",loginForm.value);
-    this.router.navigate(["/dashboard"]);
-  }
+    console.log("loginForm value==", loginForm.value);
+    this.router.navigate(["/home"]);
 
-
-  openModal(){
-
-    
-    // this.httpClient.get('https://jsonplaceholder.typicode.com/posts/1')
-    // .subscribe(
-    //   (data) => {
-    //     console.log("Data: ", data);
-    //   },
-    //   err => {
-    //     console.log("Error occured.")
-    //   }
-    // )
+    // this.loginService.authenticateCredentials()
+    //   .subscribe(res => {
+    //     console.log("LoginComponent login success ", res);
+    //   }, (err) => {
+    //     console.log("LoginComponent login err ", err);
+    //   });
   }
 
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 /**
  * FormsModule -> Template driven forms
  * ReactiveFormsModule -> Reactive forms = Model Driven Forms
@@ -13,6 +14,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ModalComponent } from './component/modal/modal.component';
+import { OurServicesComponent } from './pages/our-services/our-services.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { ModalComponent } from './component/modal/modal.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    ModalComponent
+    ModalComponent,
+    OurServicesComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   entryComponents: [ModalComponent],
   imports: [
@@ -28,6 +35,7 @@ import { ModalComponent } from './component/modal/modal.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
