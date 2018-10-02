@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /**
  * FormsModule -> Template driven forms
  * ReactiveFormsModule -> Reactive forms = Model Driven Forms
@@ -17,6 +17,7 @@ import { ModalComponent } from './component/modal/modal.component';
 import { OurServicesComponent } from './pages/our-services/our-services.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { HttpInterceptorService } from './services/http-interceptor/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,11 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

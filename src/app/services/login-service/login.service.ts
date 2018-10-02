@@ -14,9 +14,9 @@ export class LoginService {
   /**
    * This method will authenticate user credentials
    */
-  authenticateCredentials() {
-    let url: string = "https://jsonplaceholder.typicode.com/posts/1";
-    let data = {};
-    return this.restService.getCall(data, url, false);
+  authenticateCredentials(data: {}) {
+    let url: string = "https://reqres.in/api/login";
+    let isSkipAuth: boolean = true;
+    return this.restService.getCall(url, data, isSkipAuth);
   }
 }

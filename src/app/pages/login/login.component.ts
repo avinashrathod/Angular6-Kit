@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
 
   login(loginForm: NgForm) {
     console.log("loginForm value==", loginForm.value);
-    this.router.navigate(["/home"]);
-
-    // this.loginService.authenticateCredentials()
-    //   .subscribe(res => {
-    //     console.log("LoginComponent login success ", res);
-    //   }, (err) => {
-    //     console.log("LoginComponent login err ", err);
-    //   });
+    this.loginService.authenticateCredentials(loginForm.value)
+      .subscribe(res => {
+        console.log("LoginComponent login success ", res);
+        this.router.navigate(["/home"]);
+      }, (err) => {
+        if (err != null) {
+          console.log("LoginComponent login err ", err);
+        }
+      });
   }
 
 }
